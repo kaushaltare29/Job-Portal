@@ -95,3 +95,19 @@ export async function updateHiringStatus(token, { job_id }, isOpen) {
 
   return data;
 }
+
+export async function addNewJob(token, _, jobData) {
+  const supabase = await supabaseClient(token); // ✅ Initialize supabase
+
+  const { data, error } = await supabase
+    .from("jobs")
+    .insert([jobData])
+    .select(); // ✅ Destructure data and error properly
+
+  if (error) {
+    console.error("Error creating job:", error);
+    return null;
+  }
+
+  return data;
+}
