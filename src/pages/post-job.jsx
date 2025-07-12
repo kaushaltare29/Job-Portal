@@ -73,11 +73,7 @@ const PostJob = () => {
 
   useEffect(() => {
     if (isLoaded) {
-      // fnCompanies();
-      console.log("👉 Clerk user object:", user);
-      console.log("👉 user.publicMetadata.role:", user?.publicMetadata?.role);
-      console.log("👉 user.unsafeMetadata.role:", user?.unsafeMetadata?.role);
-      console.log("👉 user.privateMetadata.role:", user?.privateMetadata?.role);
+      fnCompanies();
     }
   }, [isLoaded]);
 
